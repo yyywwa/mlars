@@ -1,4 +1,5 @@
 build/
+.vscode/
 .cache/
 third_party/spdlog/.github/
 third_party/spdlog/.gitignore
