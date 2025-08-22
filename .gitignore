@@ -1,0 +1,9 @@
+build/
+.cache/
+third_party/spdlog/test/
+third_party/spdlog/examples/
+third_party/spdlog/docs/
+third_party/spdlog/cmake/
+third_party/spdlog/benchmark/
+third_party/spdlog/scripts/
+third_party/spdlog/.github/
