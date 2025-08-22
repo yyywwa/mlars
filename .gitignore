@@ -1,7 +1,6 @@
 build/
 .cache/
 third_party/spdlog/.github/
-third_party/spdlog/.git/
 third_party/spdlog/.gitignore
 third_party/spdlog/.travis.yml
 third_party/spdlog/example/
