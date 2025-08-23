@@ -7,6 +7,7 @@ namespace lars {
 // 地址类：封装 IP 地址和端口
 class InetAddress {
 public:
+  InetAddress() {}
   InetAddress(const std::string &ip, uint16_t port);
   explicit InetAddress(const struct sockaddr_in &addr);
 

@@ -20,6 +20,19 @@ private:
   std::shared_ptr<spdlog::logger> logger_;
 };
 
+#define LOG_SET_LEVEL_TRACE()                                                  \
+  Logger::getInstance().getLogger()->set_level(spdlog::level::trace);
+#define LOG_SET_LEVEL_DEBUG()                                                  \
+  Logger::getInstance().getLogger()->set_level(spdlog::level::debug);
+#define LOG_SET_LEVEL_INFO()                                                   \
+  Logger::getInstance().getLogger()->set_level(spdlog::level::info);
+#define LOG_SET_LEVEL_WARN()                                                   \
+  Logger::getInstance().getLogger()->set_level(spdlog::level::warn);
+#define LOG_SET_LEVEL_ERR()                                                    \
+  Logger::getInstance().getLogger()->set_level(spdlog::level::err);
+#define LOG_SET_LEVEL_CRITICAL()                                               \
+  Logger::getInstance().getLogger()->set_level(spdlog::level::critical);
+
 // 修正后的宏定义，将 source_loc 存储在局部变量中
 #define LOG_INTERNAL(level, format, ...)                                       \
   Logger::getInstance().getLogger()->log({__FILE__, __LINE__, __func__},       \
@@ -35,7 +48,7 @@ private:
 #define LOG_WARN(format, ...)                                                  \
   LOG_INTERNAL(spdlog::level::warn, format, ##__VA_ARGS__)
 #define LOG_ERROR(format, ...)                                                 \
-  LOG_INTERNAL(spdlog::level::error, format, ##__VA_ARGS__)
+  LOG_INTERNAL(spdlog::level::err, format, ##__VA_ARGS__)
 #define LOG_CRITICAL(format, ...)                                              \
   LOG_INTERNAL(spdlog::level::critical, format, ##__VA_ARGS__)
 
